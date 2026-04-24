@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
-<html lang="ja-JP"> <head>
+<html lang="ja-JP">
+<head>
     <title>JAN Barcode Generator | JANコード一括作成ツール v2.0</title>
     
     <meta charset="utf-8" />
@@ -45,7 +46,7 @@
             padding: 40px;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            text-align: center; /* 中身をすべて中央に */
+            text-align: center;
         }
 
         section { margin-bottom: 60px; }
@@ -60,21 +61,19 @@
         }
 
         .en-sub {
-    display: block;
-    font-size: 0.9rem;
-    color: #444; /* #666 から #444 に変更 */
-    font-weight: normal;
-    margin-bottom: 10px;
-}
+            display: block;
+            font-size: 0.9rem;
+            color: #444;
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
 
-        /* 説明文 */
         p {
-            text-align: center; /* 文字も中央寄せに */
+            text-align: center;
             max-width: 650px;
             margin: 0 auto 20px;
         }
 
-        /* 動画エリア */
         .video-container {
             max-width: 600px;
             margin: 30px auto;
@@ -85,7 +84,6 @@
             background: #000;
         }
 
-        /* 特徴リスト */
         .features {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -104,7 +102,6 @@
 
         .features h3 { color: #217346; margin: 0 0 10px 0; font-size: 1.1rem; }
 
-        /* 購入ボタン */
         .button.primary {
             display: inline-block;
             background-color: #217346;
@@ -121,6 +118,15 @@
         .button.primary:hover {
             transform: translateY(-2px);
             background-color: #1a5a37;
+        }
+
+        .update-box {
+            background: #fdfdfd;
+            border: 1px solid #eee;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
+            text-align: left;
         }
 
         footer { text-align: center; padding: 40px; color: #555; font-size: 0.8rem; }
@@ -149,6 +155,23 @@
         </p>
     </section>
 
+    <section id="updates">
+        <span class="en-sub">Major Update: v1.0 to v2.0</span>
+        <h2>劇的な進化を遂げたVersion 2.0</h2>
+        <p>
+            Batch generation and auto-calculate functions are now available.<br>
+            旧版(v1.0)の「1件ずつ作成」から、v2.0では「1,000件規模の一括作成」に対応。さらに、チェックデジットの自動付加機能やエラー検知機能を搭載しました。
+        </p>
+        
+        <div class="update-box">
+            <h3 style="color: #217346; margin-top: 0; font-size: 1.1rem;">Legacy & Modern Excel Support / 新旧エクセル対応</h3>
+            <p style="text-align: left; font-size: 0.95rem; margin-bottom: 0;">
+                The package includes both <b>.xlsm</b> (Modern) and <b>.xls</b> (Legacy) formats. It works perfectly on any PC environment.<br>
+                最新の.xlsm形式だけでなく、旧形式の.xlsファイルも同梱。マクロが使える環境であれば、新旧問わずあらゆるエクセルで動作します。
+            </p>
+        </div>
+    </section>
+
     <section id="demo">
         <span class="en-sub">Watch Demo Video</span>
         <h2>実際の動作を確認</h2>
@@ -168,18 +191,18 @@
                 <p>Security first. No data leaks.<br>完全オフラインで安全。</p>
             </li>
             <li>
-                <h3>Auto-Check</h3>
-                <p>Detects digit errors instantly.<br>誤入力も自動で検知。</p>
+                <h3>Auto-Digit</h3>
+                <p>Automatic check digit calculation.<br>チェックデジット自動付加。</p>
             </li>
         </ul>
     </section>
 
-        <section id="security">
+    <section id="security">
         <span class="en-sub">Security & Privacy First</span>
-        <h2>セキュリティと信頼性</h2>
+        <h2>オフライン環境での重要性</h2>
         <p>
-            Online free tools pose a high risk of data leakage. This tool is essential for offline PCs or secure environments where data privacy is paramount.<br>
-            外部の無料サイトにアクセスしてデータを作成するのは、情報流出のリスクが伴います。本ツールは完全オフラインで動作するため、セキュリティを重視する現場や、ネット接続のない環境での作業に最適です。
+            Online tools pose a high risk of data leakage. This tool is essential for secure business environments.<br>
+            外部サイトでの作成は、自社データ流出のリスクが伴います。本ツールは完全オフラインで動作するため、セキュリティを重視する環境に最適です。
         </p>
     </section>
 
@@ -194,8 +217,7 @@
         </div>
     </section>
 
-
-<section id="links" style="margin-top: 50px; border-top: 1px solid #eee; padding-top: 30px;">
+    <section id="links" style="margin-top: 50px; border-top: 1px solid #eee; padding-top: 30px;">
         <span class="en-sub">Connect & Support</span>
         <h2>Links</h2>
         <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
@@ -208,7 +230,7 @@
 </main>
 
 <footer>
-    <p style="font-size: 0.7rem; color: #777; margin-bottom: 10px;">
+    <p style="font-size: 0.7rem; color: #555; margin-bottom: 10px;">
         Disclaimer: Use this tool at your own risk. The creator is not responsible for any issues arising from its use.<br>
         免責事項：本ツールの利用によるトラブルについて、製作者は一切の責任を負いません。
     </p>

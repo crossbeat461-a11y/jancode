@@ -1,70 +1,167 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>JANコード一括作成ツール - Excel VBA</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    
+    <style>
+        /* Excel VBA風デザインの定義 */
+        body {
+            font-family: "Segoe UI", "Meiryo", "MS PGothic", sans-serif;
+            background-color: #f3f3f3; /* Excelの背景っぽい薄いグレー */
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* ヘッダー：Excelグリーン */
+        header#header {
+            background-color: #217346;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 6px solid #1a5a37;
+        }
+
+        header h1 { margin: 0; font-size: 2.5rem; }
+        header p { margin: 10px 0 0; opacity: 0.9; }
+
+        /* コンテンツの器 */
+        .main {
+            max-width: 900px;
+            margin: -40px auto 40px;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border: 1px solid #d1d1d1;
+        }
+
+        section { margin-bottom: 50px; }
+
+        /* Excel風の見出し */
+        h2 {
+            color: #217346;
+            border-left: 10px solid #217346;
+            padding-left: 15px;
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            background: #f9f9f9;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        /* ボタン：ビジネス感のある緑 */
+        .button.primary {
+            display: inline-block;
+            background-color: #217346;
+            color: white !important;
+            padding: 18px 40px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border-radius: 4px;
+            box-shadow: 0 4px #1a5a37;
+            transition: 0.2s;
+        }
+
+        .button.primary:hover {
+            background-color: #1a5a37;
+            transform: translateY(2px);
+            box-shadow: 0 2px #124027;
+        }
+
+        /* 特徴のリスト */
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .features li {
+            background: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #eee;
+            text-align: center;
+        }
+
+        .features h3 { color: #217346; margin-top: 0; }
+
+        /* ビデオの枠 */
+        .video-wrapper {
+            border: 2px solid #217346;
+            background: #000;
+            line-height: 0;
+        }
+
+        @media (max-width: 736px) {
+            .features { grid-template-columns: 1fr; }
+            .main { margin: 20px; padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<header id="header">
+    <h1>JANコード一括作成ツール</h1>
+    <p>完全オフライン・Excelだけで完結するプロ仕様</p>
+</header>
+
 <div id="main">
 
-  <section id="intro" class="main">
-    <div class="spotlight">
-      <div class="content">
-        <header class="major">
-          <h2>完全オフライン・Excelだけで完結</h2>
-          <h1>JANコード一括作成ツール</h1>
-        </header>
+    <section id="intro">
+        <h2>業務効率を劇的に改善</h2>
         <p>1,000枚のJANコードをわずか1分で生成。追加ソフト不要、外部サーバー通信なし。<br />
         事務作業の「バーコード発行」を、VBAの力で劇的に効率化します。</p>
-        <ul class="actions">
-          <li><a href="https://note.com/ktech_dev/n/nf2fc9e3e7bc0" class="button primary">noteで購入する（¥1,000）</a></li>
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="https://note.com/ktech_dev/n/nf2fc9e3e7bc0" class="button primary">noteで購入する（¥1,000）</a>
+        </div>
+    </section>
+
+    <section id="demo">
+        <h2>実際の動作を確認（1,000枚作成、わずか1分）</h2>
+        <div class="video-wrapper">
+            <video width="100%" controls>
+                <source src="assets/vba_demo.mp4" type="video/mp4">
+                お使いのブラウザは動画再生に対応していません。
+            </video>
+        </div>
+        <p style="margin-top: 20px; text-align: center;">
+            複雑な設定は一切ありません。Excelを開き、番号を入力して実行するだけ。
+        </p>
+    </section>
+
+    <section id="features">
+        <h2>選ばれる3つの理由</h2>
+        <ul class="features">
+            <li>
+                <h3>完全オフライン</h3>
+                <p>外部サーバーにデータを送信しないため、機密情報も安全に扱えます。</p>
+            </li>
+            <li>
+                <h3>圧倒的スピード</h3>
+                <p>VBAを最適化。大量の画像も一瞬で生成・配置します。</p>
+            </li>
+            <li>
+                <h3>Excel完結</h3>
+                <p>専用ソフトやフォントのインストールは一切不要です。</p>
+            </li>
         </ul>
-      </div>
-      <span class="image"><img src="images/excel_icon.png" alt="Excelアイコン" /></span>
-    </div>
-  </section>
+    </section>
 
-  <section id="demo" class="main special">
-    <header class="major">
-      <h2>1,000枚作成、わずか1分。</h2>
-    </header>
-    <div class="video-wrapper" style="max-width: 800px; margin: 0 auto;">
-      <video width="100%" controls poster="images/video_thumbnail.jpg">
-        <source src="assets/vba_demo.mp4" type="video/mp4">
-        お使いのブラウザは動画再生に対応していません。
-      </video>
-    </div>
-    <p style="margin-top: 20px;">
-      複雑な設定は一切ありません。Excelを開き、番号を入力して実行するだけ。
-    </p>
-  </section>
-
-  <section id="features" class="main special">
-    <header class="major">
-      <h2>選ばれる3つの理由</h2>
-    </header>
-    <ul class="features">
-      <li>
-        <span class="icon solid major style1 fa-shield-alt"></span>
-        <h3>完全オフライン</h3>
-        <p>外部サーバーにデータを送信しないため、新商品の情報も安全に扱えます。</p>
-      </li>
-      <li>
-        <span class="icon major style3 fa-bolt"></span>
-        <h3>圧倒的スピード</h3>
-        <p>VBAを最適化し、大量のJANコード画像も一瞬で生成・配置します。</p>
-      </li>
-      <li>
-        <span class="icon major style5 fa-copy"></span>
-        <h3>ExcelさえあればOK</h3>
-        <p>フォントのインストールや専用ソフトの購入は不要です。</p>
-      </li>
-    </ul>
-  </section>
-
-  <section id="cta" class="main special">
-    <header class="major">
-      <h2>今すぐ業務を自動化しましょう</h2>
-      <p>一度購入すれば、期限なしでずっと使い続けられます。</p>
-    </header>
-    <footer class="major">
-      <ul class="actions special">
-        <li><a href="https://note.com/ktech_dev/n/nf2fc9e3e7bc0" class="button primary">noteで詳細を見る</a></li>
-      </ul>
-    </footer>
-  </section>
+    <section id="cta" style="text-align: center;">
+        <h2>今すぐ業務を自動化しましょう</h2>
+        <p>一度購入すれば、期限なしでずっと使い続けられます。</p>
+        <a href="https://note.com/ktech_dev/n/nf2fc9e3e7bc0" class="button primary">noteで詳細を見る</a>
+    </section>
 
 </div>
+
+<footer style="text-align: center; padding: 20px; color: #888; font-size: 0.8rem;">
+    &copy; JANコード一括作成ツール All rights reserved.
+</footer>
+
+</body>
+</html>

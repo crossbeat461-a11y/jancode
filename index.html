@@ -6,12 +6,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     
-    <meta name="description" content="Professional JAN/EAN Barcode Generator for Excel. Create 1,000 codes in 1 minute. Fully offline. | 1,000枚のJANコードを1分で一括作成。Excel VBA完結、完全オフラインのプロ仕様ツール。">
-    
+    <meta name="description" content="Professional JAN/EAN Barcode Generator for Excel. Create barcodes with high precision. Fully offline. | 読み取り精度を追求したJANコード一括作成ツール。Excel VBA完結、完全オフラインのプロ仕様。">
     <meta name="keywords" content="JAN Code, EAN-13, Barcode Generator Excel, Excel VBA, In-store code, GTIN, バーコード作成, エクセル 効率化">
 
     <meta property="og:title" content="JAN Barcode Generator | JANコード一括作成ツール">
-    <meta property="og:description" content="Generate 1,000 EAN/JAN barcodes in just 1 minute. Secure and Offline.">
+    <meta property="og:description" content="High-precision EAN/JAN barcodes for Excel. Secure and Offline.">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:locale:alternate" content="en_US">
     <meta property="og:type" content="website">
@@ -26,7 +25,6 @@
             line-height: 1.6;
         }
 
-        /* ヘッダー */
         header#header {
             background-color: #217346;
             color: white;
@@ -38,7 +36,6 @@
         header h1 { margin: 0; font-size: 2.2rem; }
         header p { margin: 10px 0 0; opacity: 0.9; }
 
-        /* メインコンテンツの器 */
         #main {
             max-width: 800px;
             margin: 30px auto;
@@ -68,11 +65,7 @@
             margin-bottom: 10px;
         }
 
-        p {
-            text-align: center;
-            max-width: 650px;
-            margin: 0 auto 20px;
-        }
+        p { text-align: center; max-width: 650px; margin: 0 auto 20px; }
 
         .video-container {
             max-width: 600px;
@@ -115,10 +108,7 @@
             transition: 0.3s;
         }
 
-        .button.primary:hover {
-            transform: translateY(-2px);
-            background-color: #1a5a37;
-        }
+        .button.primary:hover { transform: translateY(-2px); background-color: #1a5a37; }
 
         .update-box {
             background: #fdfdfd;
@@ -131,9 +121,44 @@
 
         footer { text-align: center; padding: 40px; color: #555; font-size: 0.8rem; }
 
+        /* モーダルのスタイル */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.6);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 600px;
+            text-align: left;
+            position: relative;
+        }
+
+        .close-button {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #aaa;
+        }
+
+        .close-button:hover { color: #333; }
+
         @media (max-width: 600px) {
             .features { grid-template-columns: 1fr; }
             #main { margin: 15px; padding: 20px; }
+            .modal-content { margin: 20% 15px; }
         }
     </style>
 </head>
@@ -147,12 +172,8 @@
 <main id="main">
 
     <section id="intro">
-        <span class="en-sub">Fully Offline / Excel-Based Tool</span>
+        <span class="en-sub">High-Precision / Professional Quality</span>
         <h2>スキャナが迷わない、高精度な仕上がり。</h2>
-        <p>
-            No external software needed. Safe, fast, and professional.<br>
-            追加ソフト不要。外部サーバー通信なし。事務作業を劇的に効率化します。
-        </p>
         <p>
             Crisp, clear barcodes designed for instant scanning. Professional quality without complex settings.<br>
             読み取りやすさを追求した高精度なバーコード。複雑な設定不要で、現場の作業を止めないプロの品質を提供します。
@@ -166,11 +187,10 @@
             Batch generation and auto-calculate functions are now available.<br>
             旧版(v1.0)の「1件ずつ作成」から、v2.0では「1,000件規模の一括作成」に対応。さらに、チェックデジットの自動付加機能やエラー検知機能を搭載しました。
         </p>
-        
         <div class="update-box">
             <h3 style="color: #217346; margin-top: 0; font-size: 1.1rem;">Legacy & Modern Excel Support / 新旧エクセル対応</h3>
             <p style="text-align: left; font-size: 0.95rem; margin-bottom: 0;">
-                The package includes both <b>.xlsm</b> (Modern) and <b>.xls</b> (Legacy) formats. It works perfectly on any PC environment.<br>
+                Includes both <b>.xlsm</b> and <b>.xls</b> formats. Works perfectly on any Excel environment.<br>
                 最新の.xlsm形式だけでなく、旧形式の.xlsファイルも同梱。マクロが使える環境であれば、新旧問わずあらゆるエクセルで動作します。
             </p>
         </div>
@@ -205,8 +225,8 @@
         <span class="en-sub">Security & Privacy First</span>
         <h2>オフライン環境での重要性</h2>
         <p>
-            Online tools pose a high risk of data leakage. This tool is essential for secure business environments.<br>
-            外部サイトでの作成は、自社データ流出のリスクが伴います。本ツールは完全オフラインで動作するため、セキュリティを重視する環境に最適です。
+            Online tools pose a risk of data leakage. This tool is essential for secure business environments.<br>
+            外部サイトでの作成はデータ流出のリスクが伴います。本ツールは完全オフラインで動作するため、セキュリティを重視する環境に最適です。
         </p>
     </section>
 
@@ -228,18 +248,45 @@
             <a href="https://x.com/K_Tech_Dev" target="_blank" style="text-decoration: none; color: #555;">X (Twitter)</a>
             <a href="https://github.com/crossbeat461-a11y/crossbeat461-a11y" target="_blank" style="text-decoration: none; color: #555;">GitHub</a>
             <a href="https://k-tech-lab.vercel.app/" target="_blank" style="text-decoration: none; color: #555;">Portfolio</a>
+            <a href="javascript:void(0)" id="openModal" style="text-decoration: none; color: #555;">Disclaimer / 免責事項</a>
             <a href="https://note.com/ktech_dev/n/nf2fc9e3e7bc0" target="_blank" style="text-decoration: none; color: #217346; font-weight: bold;">Official Store (note)</a>
         </div>
     </section>
 </main>
 
+<div id="disclaimerModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h3 style="color: #217346;">Disclaimer / 免責事項</h3>
+        <div style="font-size: 0.9rem; line-height: 1.8;">
+            <p style="text-align: left;">
+                <strong>English:</strong><br>
+                This tool is provided "as is" without any warranties. The creator shall not be liable for any direct or indirect damages arising from the use of this tool. Use it at your own risk.
+            </p>
+            <p style="text-align: left; border-top: 1px solid #eee; pt: 15px; margin-top: 15px;">
+                <strong>日本語:</strong><br>
+                本ツールは現状有姿で提供されます。本ツールの利用によって生じた直接的・間接的な損害について、製作者は一切の責任を負いません。ご利用は自己責任でお願いいたします。
+            </p>
+        </div>
+    </div>
+</div>
+
 <footer>
-    <p style="font-size: 0.7rem; color: #555; margin-bottom: 10px;">
-        Disclaimer: Use this tool at your own risk. The creator is not responsible for any issues arising from its use.<br>
-        免責事項：本ツールの利用によるトラブルについて、製作者は一切の責任を負いません。
-    </p>
     &copy; k-Tech Studio. All rights reserved.
 </footer>
+
+<script>
+    // モーダルの制御
+    const modal = document.getElementById("disclaimerModal");
+    const btn = document.getElementById("openModal");
+    const span = document.getElementsByClassName("close-button")[0];
+
+    btn.onclick = function() { modal.style.display = "block"; }
+    span.onclick = function() { modal.style.display = "none"; }
+    window.onclick = function(event) {
+        if (event.target == modal) { modal.style.display = "none"; }
+    }
+</script>
 
 </body>
 </html>

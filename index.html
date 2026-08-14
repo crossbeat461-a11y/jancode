@@ -8,21 +8,79 @@
       gtag('js', new Date());
       gtag('config', 'G-ME45CP3Z4T');
     </script>
-    <title>JAN Barcode Generator | JANコード一括作成ツール v2.0</title>
+    <title>JANコード一括作成ツール v2.0 | Excel VBA・完全オフライン</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Professional JAN/EAN Barcode Generator for Excel. Create barcodes with high precision. Fully offline. | 読み取り精度を追求したJANコード一括作成ツール。Excel VBA完結、完全オフラインのプロ仕様。">
-    <meta name="keywords" content="JAN Code, EAN-13, Barcode Generator Excel, Excel VBA, In-store code, GTIN, バーコード作成, エクセル 効率化">
-    <meta property="og:title" content="JAN Barcode Generator | JANコード一括作成ツール">
-    <meta property="og:description" content="High-precision EAN/JAN barcodes for Excel. Secure and Offline.">
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="K-Tech Studio" />
+    <meta name="theme-color" content="#217346" />
+    <meta name="description" content="Excel VBAでJAN/EANバーコードを一括作成。チェックデジット自動、完全オフライン。.xlsm / .xls 対応。">
+    <link rel="canonical" href="https://jancode-psi.vercel.app/" />
+    <link rel="alternate" hreflang="ja" href="https://jancode-psi.vercel.app/" />
+    <link rel="alternate" hreflang="en" href="https://jancode-psi.vercel.app/?lang=en" />
+    <link rel="alternate" hreflang="x-default" href="https://jancode-psi.vercel.app/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="https://jancode-psi.vercel.app/images/ogp-main.jpg" />
+    <meta property="og:site_name" content="K-Tech Studio" />
+    <meta property="og:title" content="JANコード一括作成ツール v2.0 | Excel VBA・完全オフライン">
+    <meta property="og:description" content="Excel VBAでJAN/EANバーコードを一括作成。チェックデジット自動、完全オフライン。">
     <meta property="og:image" content="https://jancode-psi.vercel.app/images/ogp-main.jpg">
+    <meta property="og:image:alt" content="JAN Barcode Generator for Excel">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="JANコード一括作成ツール v2.0 | Excel VBA・完全オフライン">
+    <meta name="twitter:description" content="Excel VBAでJAN/EANバーコードを一括作成。チェックデジット自動、完全オフライン。">
+    <meta name="twitter:image" content="https://jancode-psi.vercel.app/images/ogp-main.jpg">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:locale:alternate" content="en_US">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jancode-psi.vercel.app/">
+    <script type="application/ld+json" id="ld-json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://k-tech-lab.vercel.app/#organization",
+          "name": "K-Tech Studio",
+          "url": "https://k-tech-lab.vercel.app/",
+          "sameAs": [
+            "https://note.com/ktech_dev",
+            "https://x.com/K_Tech_Dev",
+            "https://github.com/crossbeat461-a11y"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://jancode-psi.vercel.app/#website",
+          "url": "https://jancode-psi.vercel.app/",
+          "name": "JANコード一括作成ツール",
+          "inLanguage": "ja",
+          "publisher": { "@id": "https://k-tech-lab.vercel.app/#organization" }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://jancode-psi.vercel.app/#app",
+          "name": "JANコード一括作成ツール",
+          "alternateName": "JAN Barcode Generator",
+          "url": "https://jancode-psi.vercel.app/",
+          "image": "https://jancode-psi.vercel.app/images/ogp-main.jpg",
+          "description": "Excel VBAでJAN/EANバーコードを一括作成。チェックデジット自動、完全オフライン。.xlsm / .xls 対応。",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Windows, macOS",
+          "softwareVersion": "2.0",
+          "isAccessibleForFree": false,
+          "offers": {
+            "@type": "Offer",
+            "url": "https://note.com/ktech_dev/n/nf2fc9e3e7bc0",
+            "availability": "https://schema.org/InStock"
+          },
+          "author": { "@id": "https://k-tech-lab.vercel.app/#organization" }
+        }
+      ]
+    }
+    </script>
     <style>
         :root {
             --xl-green: #217346;
@@ -401,8 +459,9 @@
         <span class="formula i18n-en">=GenerateJAN()</span>
     </div>
     <header id="header">
-    <h1>JAN Barcode Generator</h1>
-    <p class="i18n-ja">JANコード一括作成ツール v2.0</p>
+    <h1 class="i18n-ja">JANコード一括作成ツール</h1>
+    <h1 class="i18n-en">JAN Barcode Generator</h1>
+    <p class="i18n-ja">Excel VBA で JAN / EAN バーコードを一括作成 v2.0</p>
     <p class="i18n-en">Batch JAN / EAN barcode tool for Excel v2.0</p>
     <span class="file-badge">Excel VBA · .xlsm / .xls</span>
 </header>
@@ -446,10 +505,14 @@
         <h2 class="i18n-ja">実際の動作を確認</h2>
         <h2 class="i18n-en">Watch the demo</h2>
         <div class="video-container">
-            <video width="100%" controls playsinline>
+            <video width="100%" controls playsinline preload="metadata"
+                poster="images/ogp-main.jpg"
+                title="JAN barcode batch generation demo">
                 <source src="assets/barcode.mp4" type="video/mp4">
             </video>
         </div>
+        <p class="i18n-ja">Excel VBA で JAN バーコードを一括作成するデモ動画です。</p>
+        <p class="i18n-en">Demo: batch JAN barcode generation in Excel VBA.</p>
     </section>
 
     <section id="features">
@@ -548,32 +611,71 @@
         if (event.target == modal) { modal.style.display = "none"; }
     }
 
+    var SITE = "https://jancode-psi.vercel.app/";
     var titles = {
-        ja: "JANコード一括作成ツール v2.0 | JAN Barcode Generator",
-        en: "JAN Barcode Generator v2.0 | Excel JAN / EAN barcodes"
+        ja: "JANコード一括作成ツール v2.0 | Excel VBA・完全オフライン",
+        en: "JAN Barcode Generator v2.0 | Excel JAN / EAN barcodes, offline"
     };
     var descriptions = {
-        ja: "読み取り精度を追求したJANコード一括作成ツール。Excel VBA完結、完全オフライン。",
-        en: "High-precision JAN/EAN barcodes for Excel. Fully offline. No complex setup."
+        ja: "Excel VBAでJAN/EANバーコードを一括作成。チェックデジット自動、完全オフライン。.xlsm / .xls 対応。",
+        en: "Batch JAN/EAN barcodes in Excel VBA. Auto check digit, fully offline. Includes .xlsm and .xls."
     };
+    var names = {
+        ja: "JANコード一括作成ツール",
+        en: "JAN Barcode Generator"
+    };
+
+    function setMeta(selector, attr, value) {
+        var el = document.querySelector(selector);
+        if (el) el.setAttribute(attr, value);
+    }
+
+    function pageUrl(lang) {
+        return lang === "en" ? SITE + "?lang=en" : SITE;
+    }
 
     function setLang(lang) {
         var next = lang === "en" ? "en" : "ja";
-        document.documentElement.lang = next === "en" ? "en" : "ja";
+        var url = pageUrl(next);
+        document.documentElement.lang = next === "en" ? "en" : "ja-JP";
         document.body.classList.remove("lang-ja", "lang-en");
         document.body.classList.add(next === "en" ? "lang-en" : "lang-ja");
         document.querySelectorAll(".lang-switch button").forEach(function (el) {
             el.classList.toggle("is-active", el.getAttribute("data-lang") === next);
         });
         document.title = titles[next];
-        var meta = document.querySelector('meta[name="description"]');
-        if (meta) meta.setAttribute("content", descriptions[next]);
+        setMeta('meta[name="description"]', "content", descriptions[next]);
+        setMeta('link[rel="canonical"]', "href", url);
+        setMeta('meta[property="og:title"]', "content", titles[next]);
+        setMeta('meta[property="og:description"]', "content", descriptions[next]);
+        setMeta('meta[property="og:url"]', "content", url);
+        setMeta('meta[property="og:locale"]', "content", next === "en" ? "en_US" : "ja_JP");
+        setMeta('meta[name="twitter:title"]', "content", titles[next]);
+        setMeta('meta[name="twitter:description"]', "content", descriptions[next]);
+        var ld = document.getElementById("ld-json");
+        if (ld) {
+            try {
+                var data = JSON.parse(ld.textContent);
+                data["@graph"].forEach(function (node) {
+                    if (node["@type"] === "WebSite") {
+                        node.name = names[next];
+                        node.inLanguage = next;
+                    }
+                    if (node["@type"] === "SoftwareApplication") {
+                        node.name = names[next];
+                        node.description = descriptions[next];
+                        node.url = url;
+                    }
+                });
+                ld.textContent = JSON.stringify(data);
+            } catch (e) {}
+        }
         try { localStorage.setItem("jancode-lang", next); } catch (e) {}
         if (history.replaceState) {
-            var url = new URL(window.location.href);
-            if (next === "ja") url.searchParams.delete("lang");
-            else url.searchParams.set("lang", "en");
-            history.replaceState({}, "", url);
+            var loc = new URL(window.location.href);
+            if (next === "ja") loc.searchParams.delete("lang");
+            else loc.searchParams.set("lang", "en");
+            history.replaceState({}, "", loc);
         }
     }
 

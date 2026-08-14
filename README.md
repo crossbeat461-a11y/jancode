@@ -1,8 +1,9 @@
-# JAN Barcode Generator 🚀
+# JAN Barcode Generator
 
-**Version 2.0** — High-precision JAN / EAN barcode batch creation for Microsoft Excel (VBA). Fully offline.
+Excel だけで JAN / EAN バーコードを一括作成するツールです。生成は PC 上で完結し、外部にデータを送りません。
 
-Landing page repository for **JANコード一括作成ツール**.
+**買う（note・¥1,000）:** [note.com/ktech_dev/n/nf2fc9e3e7bc0](https://note.com/ktech_dev/n/nf2fc9e3e7bc0)  
+**見る（LP）:** [jancode-psi.vercel.app](https://jancode-psi.vercel.app/)
 
 [English](#english) | [日本語](#japanese)
 
@@ -11,114 +12,76 @@ Landing page repository for **JANコード一括作成ツール**.
 <a name="english"></a>
 ## English
 
-**Create scanner-ready JAN/EAN barcodes in Excel—without sending product data online.**  
-This project is the public landing page and product hub for the Excel VBA–based JAN Barcode Generator used in real EC / retail operations.
+Create scanner-ready JAN / EAN barcodes in Excel. No web upload.
 
-### ✨ Key Features
+**[Buy on note — ¥1,000](https://note.com/ktech_dev/n/nf2fc9e3e7bc0)** · **[Landing page](https://jancode-psi.vercel.app/?lang=en)**
 
-* **100% Offline** — No web API calls. Safe for closed or security-sensitive environments.
-* **Batch generation** — Scale from single codes to ~1,000 items (v2.0).
-* **Auto check digit** — Automatic check-digit calculation for standard lengths.
-* **High scan accuracy** — Rendering tuned for crisp bars that scanners read reliably.
-* **Legacy & modern Excel** — Ships with both `.xlsm` and `.xls` formats.
-* **EN / JA manuals** — English and Japanese documentation included with the product.
+This GitHub repo is the landing page only. The workbook is **not** in this repository. You get it from note after purchase.
 
-### 🌐 Live site
+### What you get
 
-👉 **[JAN Barcode Generator LP](https://jancode-psi.vercel.app/)**
+* `.xlsm` (current Excel) and `.xls` (legacy Excel)
+* English and Japanese manuals
+* Batch generation (about 1,000 items in v2.0)
+* Automatic check digit
+* Error highlighting for bad length / empty cells
+* Fully offline VBA — no network calls
 
-### 🛒 Get the tool
+### Requirements
 
-The Excel workbook (macro-enabled) is distributed via note:  
-👉 **[Buy / product page on note](https://note.com/ktech_dev/n/nf2fc9e3e7bc0)**
+* Windows 10 / 11
+* Excel 2016 or later (32-bit and 64-bit)
+* **Not supported:** Mac Excel, iPad, Google Sheets, LibreOffice
 
-### 🛠 What’s in this repository
+### Privacy
 
-This repo hosts the **landing page** (static site):
-
-```
-jancode/
-├── index.html           # Product LP (JA / EN copy)
-├── assets/barcode.mp4   # Demo video
-├── images/ogp-main.jpg  # OGP image
-└── README.md
-```
-
-For technical design notes, see:  
-👉 **[k-tech-jancode-docs](https://github.com/crossbeat461-a11y/k-tech-jancode-docs)**
-
-### 🔒 Privacy & security
-
-* Barcode generation runs **inside Excel on your PC** (offline VBA).
-* This LP site does not process or store your JAN/product lists.
-* Use the tool in line with your organization’s security policies.
-
-### ⚠️ Disclaimer
-
-Provided “as is” without warranty. The author is not liable for damages arising from use. Use at your own risk.  
-(Full disclaimer is also shown on the [LP](https://jancode-psi.vercel.app/).)
+Barcodes are generated inside Excel on your PC. This site does not collect your JAN lists.
 
 ---
 
 <a name="japanese"></a>
 ## 日本語
 
-**スキャナが迷わない高精度な JAN / EAN バーコードを、Excel だけで一括作成。**  
-本リポジトリは、Excel VBA 製 **JANコード一括作成ツール v2.0** のランディングページ（公開サイト）です。
+スキャナが迷わない JAN / EAN バーコードを、Excel だけで一括作成します。
 
-### ✨ 主な特徴
+**[note で購入 — ¥1,000](https://note.com/ktech_dev/n/nf2fc9e3e7bc0)** · **[紹介ページ](https://jancode-psi.vercel.app/)**
 
-* **完全オフライン** — Web API なし。閉域・セキュアな業務環境向け。
-* **一括作成** — v2.0 で約 1,000 件規模のバッチ生成に対応。
-* **チェックデジット自動付加** — 標準桁数向けに自動計算。
-* **読み取り精度** — 現場のスキャナ読み取りを意識した描画。
-* **新旧 Excel 対応** — `.xlsm` / `.xls` を同梱。
-* **日英マニュアル** — 英語・日本語の説明を同梱。
+この GitHub は紹介サイト（LP）の置き場です。**Excel 本体はこのリポジトリに入っていません。** 購入後に note からダウンロードします。
 
-### 🌐 公開サイト
+### 届くもの
 
-👉 **[JANコード一括作成ツール LP](https://jancode-psi.vercel.app/)**
+* `.xlsm`（現行 Excel）と `.xls`（旧形式）
+* 英語・日本語マニュアル
+* 一括作成（v2.0 で約 1,000 件）
+* チェックデジット自動
+* 桁数ミス・入力漏れを青で検知
+* 完全オフライン（外部通信なし）
 
-### 🛒 入手方法
+### 動作環境
 
-Excel マクロブックは note で配布しています：  
-👉 **[note 購入ページ](https://note.com/ktech_dev/n/nf2fc9e3e7bc0)**
+* Windows 10 / 11
+* Excel 2016 以降（32bit / 64bit）
+* **非対応:** Mac 版 Excel、iPad、スプレッドシート、LibreOffice など
 
-### 🛠 このリポジトリの内容
+### プライバシー
 
-**LP（静的サイト）** を管理しています。
-
-```
-jancode/
-├── index.html           # 製品 LP
-├── assets/barcode.mp4   # デモ動画
-├── images/ogp-main.jpg  # OGP 画像
-└── README.md
-```
-
-技術設計・ロジック解説はこちら：  
-👉 **[k-tech-jancode-docs](https://github.com/crossbeat461-a11y/k-tech-jancode-docs)**
-
-### 🔒 プライバシー・セキュリティ
-
-* バーコード生成は **PC 上の Excel（VBA）内** で完結（オフライン）。
-* 本 LP サイトは JAN / 商品リストを収集・保存しません。
-* 利用時は所属組織のセキュリティ方針に従ってください。
-
-### ⚠️ 免責事項
-
-本ツールは現状有姿で提供されます。利用により生じた損害について、製作者は責任を負いません。ご利用は自己責任でお願いします。  
-（詳細は [LP](https://jancode-psi.vercel.app/) の免責事項も参照してください。）
+生成は PC 上の Excel（VBA）内で完結します。この LP は JAN / 商品リストを保存しません。
 
 ---
 
-## 🔗 Links
+## このリポジトリ
 
-* **Landing Page:** [jancode-psi.vercel.app](https://jancode-psi.vercel.app/)
-* **Product (note):** [note.com/ktech_dev](https://note.com/ktech_dev/n/nf2fc9e3e7bc0)
-* **Technical docs:** [k-tech-jancode-docs](https://github.com/crossbeat461-a11y/k-tech-jancode-docs)
-* **Studio:** [K-Tech Studio / Portfolio](https://k-tech-lab.vercel.app/)
+静的な紹介ページです。
 
----
+```
+index.html
+assets/barcode.mp4
+images/ogp-main.jpg
+```
 
-© k-Tech Studio. All rights reserved.
+技術メモ: [k-tech-jancode-docs](https://github.com/crossbeat461-a11y/k-tech-jancode-docs)  
+Studio: [k-tech-lab.vercel.app](https://k-tech-lab.vercel.app/)
+
+免責: 現状有姿です。利用は自己責任でお願いします。詳細は [LP](https://jancode-psi.vercel.app/) にもあります。
+
+© K-Tech Studio

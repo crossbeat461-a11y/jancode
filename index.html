@@ -24,118 +24,54 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jancode-psi.vercel.app/">
     <style>
+        :root {
+            --xl-green: #217346;
+            --xl-green-dark: #1a5a37;
+            --xl-ribbon: #f3f3f3;
+            --xl-grid: #d0d7de;
+            --xl-header: #e7e6e6;
+            --vbe: #1e1e1e;
+        }
+        * { box-sizing: border-box; }
         body {
-            font-family: "Segoe UI", "Meiryo", sans-serif;
-            background-color: #f0f2f5;
-            color: #333;
+            font-family: "Segoe UI", "Yu Gothic UI", "Meiryo", sans-serif;
+            background: #5f6a64;
+            color: #222;
             margin: 0;
-            padding: 0;
-            line-height: 1.6;
+            padding: 16px;
+            line-height: 1.55;
         }
-
-        header#header {
-            background-color: #217346;
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-            border-bottom: 5px solid #1a5a37;
+        .workbook {
+            max-width: 920px;
+            margin: 0 auto;
+            background: #fff;
+            border: 1px solid #3d3d3d;
+            box-shadow: 0 8px 28px rgba(0,0,0,0.28);
         }
-
-        header h1 { margin: 0; font-size: 2.2rem; }
-        header p { margin: 10px 0 0; opacity: 0.9; }
-
-        #main {
-            max-width: 800px;
-            margin: 30px auto;
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            text-align: center;
+        .titlebar {
+            background: linear-gradient(#2e8b57, var(--xl-green));
+            color: #fff;
+            padding: 8px 12px 8px 40px;
+            font-size: 0.85rem;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
         }
-
-        section { margin-bottom: 60px; }
-
-        h2 {
-            color: #217346;
-            font-size: 1.6rem;
-            border-bottom: 2px solid #217346;
-            display: inline-block;
-            padding-bottom: 8px;
-            margin-bottom: 25px;
-        }
-
-        .en-sub {
-            display: block;
-            font-size: 0.9rem;
-            color: #444;
-            font-weight: normal;
-            margin-bottom: 10px;
-        }
-
-        p { text-align: center; max-width: 650px; margin: 0 auto 20px; }
-
-        .video-container {
-            max-width: 600px;
-            margin: 30px auto;
-            border: 4px solid #f8f9fa;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            background: #000;
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            list-style: none;
-            padding: 0;
-            margin: 30px 0;
-        }
-
-        .features li {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px solid #eee;
-        }
-
-        .features h3 { color: #217346; margin: 0 0 10px 0; font-size: 1.1rem; }
-
-        .button.primary {
-            display: inline-block;
-            background-color: #217346;
-            color: white !important;
-            padding: 20px 40px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2rem;
-            border-radius: 50px;
-            box-shadow: 0 4px 15px rgba(33, 115, 70, 0.3);
-            transition: 0.3s;
-        }
-
-        .button.primary:hover { transform: translateY(-2px); background-color: #1a5a37; }
-
-        .update-box {
-            background: #fdfdfd;
-            border: 1px solid #eee;
-            padding: 25px;
-            border-radius: 10px;
-            margin-top: 30px;
-            text-align: left;
-        }
-
-        footer { text-align: center; padding: 40px; color: #555; font-size: 0.8rem; }
-
-        .lang-switch {
+        .titlebar::before {
+            content: "";
             position: absolute;
-            top: 16px;
-            right: 20px;
-            font-size: 0.9rem;
+            left: 10px;
+            top: 8px;
+            width: 22px;
+            height: 18px;
+            background: #fff;
+            border-radius: 2px;
+            box-shadow: inset 0 0 0 2px var(--xl-green);
         }
-        header#header { position: relative; }
+        .titlebar-name { font-weight: 600; }
+        .lang-switch { font-size: 0.85rem; flex-shrink: 0; }
         .lang-switch button {
             background: none;
             border: none;
@@ -149,13 +85,246 @@
             color: #fff;
             font-weight: 700;
             text-decoration: underline;
-            text-underline-offset: 4px;
+            text-underline-offset: 3px;
         }
         .lang-sep { opacity: 0.6; user-select: none; }
         body.lang-ja .i18n-en { display: none !important; }
         body.lang-en .i18n-ja { display: none !important; }
 
-        /* モーダルのスタイル */
+        .ribbon {
+            background: var(--xl-ribbon);
+            border-bottom: 1px solid #c6c6c6;
+            padding: 0 8px;
+        }
+        .ribbon-tabs {
+            display: flex;
+            gap: 2px;
+            padding-top: 6px;
+            font-size: 0.8rem;
+        }
+        .ribbon-tabs span {
+            padding: 6px 12px;
+            color: #444;
+        }
+        .ribbon-tabs span.is-on {
+            background: #fff;
+            border: 1px solid #c6c6c6;
+            border-bottom-color: #fff;
+            color: var(--xl-green);
+            font-weight: 700;
+            margin-bottom: -1px;
+        }
+        .ribbon-body {
+            background: #fff;
+            border: 1px solid #c6c6c6;
+            border-top: none;
+            padding: 8px 12px 10px;
+            font-size: 0.78rem;
+            color: #333;
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .ribbon-group {
+            border-right: 1px solid #ddd;
+            padding-right: 16px;
+        }
+        .ribbon-group:last-child { border-right: none; }
+        .ribbon-group b { display: block; color: var(--xl-green); margin-bottom: 2px; }
+
+        .formula-bar {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--xl-grid);
+            font-size: 0.85rem;
+            background: #fff;
+        }
+        .formula-bar .fx {
+            width: 36px;
+            text-align: center;
+            font-style: italic;
+            font-family: Georgia, serif;
+            color: #217346;
+            border-right: 1px solid var(--xl-grid);
+            padding: 6px 0;
+        }
+        .formula-bar .cell-ref {
+            width: 48px;
+            text-align: center;
+            border-right: 1px solid var(--xl-grid);
+            padding: 6px 0;
+            background: var(--xl-header);
+            font-weight: 600;
+        }
+        .formula-bar .formula {
+            padding: 6px 10px;
+            font-family: Consolas, "Courier New", monospace;
+        }
+
+        header#header {
+            background: #fff;
+            color: #111;
+            padding: 20px 16px 12px 48px;
+            text-align: left;
+            border-bottom: 1px solid var(--xl-grid);
+            position: relative;
+        }
+        header#header::before {
+            content: "A1";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 40px;
+            background: var(--xl-header);
+            border-right: 1px solid var(--xl-grid);
+            font-size: 0.7rem;
+            color: #666;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        header h1 { margin: 0; font-size: 1.55rem; color: #111; }
+        header p { margin: 6px 0 0; color: #444; font-size: 0.95rem; }
+        .file-badge {
+            display: inline-block;
+            margin-top: 8px;
+            font-size: 0.75rem;
+            background: #fff3cd;
+            border: 1px solid #e6d08a;
+            padding: 2px 8px;
+            font-family: Consolas, "Courier New", monospace;
+        }
+
+        .sheet {
+            display: grid;
+            grid-template-columns: 40px 1fr;
+        }
+        .row-gutter {
+            background: var(--xl-header);
+            border-right: 1px solid var(--xl-grid);
+            color: #666;
+            font-size: 0.7rem;
+            text-align: center;
+            padding-top: 12px;
+        }
+        #main {
+            max-width: none;
+            margin: 0;
+            background: #fff;
+            padding: 20px 24px 28px;
+            border-radius: 0;
+            box-shadow: none;
+            text-align: left;
+        }
+        section { margin-bottom: 36px; }
+        h2 {
+            color: var(--xl-green);
+            font-size: 1.25rem;
+            border-bottom: 1px solid var(--xl-grid);
+            display: block;
+            padding: 0 0 6px;
+            margin: 0 0 12px;
+        }
+        p { text-align: left; max-width: none; margin: 0 0 12px; }
+
+        .vbe {
+            background: var(--vbe);
+            color: #d4d4d4;
+            font-family: Consolas, "Courier New", monospace;
+            font-size: 0.82rem;
+            padding: 12px 14px;
+            margin: 16px 0 0;
+            border: 1px solid #111;
+            text-align: left;
+        }
+        .vbe .vbe-title {
+            color: #9cdcfe;
+            margin-bottom: 8px;
+            font-size: 0.75rem;
+        }
+        .vbe .kw { color: #569cd6; }
+        .vbe .cm { color: #6a9955; }
+        .vbe .str { color: #ce9178; }
+
+        .video-container {
+            max-width: 100%;
+            margin: 12px 0 0;
+            border: 1px solid var(--xl-grid);
+            border-radius: 0;
+            overflow: hidden;
+            box-shadow: none;
+            background: #000;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            list-style: none;
+            padding: 0;
+            margin: 12px 0 0;
+            border: 1px solid var(--xl-grid);
+        }
+        .features li {
+            background: #fff;
+            padding: 14px 16px;
+            border-radius: 0;
+            border: none;
+            border-right: 1px solid var(--xl-grid);
+        }
+        .features li:last-child { border-right: none; }
+        .features h3 { color: var(--xl-green); margin: 0 0 8px 0; font-size: 1rem; }
+        .button.primary {
+            display: inline-block;
+            background-color: var(--xl-green);
+            color: white !important;
+            padding: 10px 22px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-radius: 2px;
+            box-shadow: none;
+            border: 1px solid var(--xl-green-dark);
+        }
+        .button.primary:hover { background-color: var(--xl-green-dark); transform: none; }
+        .update-box {
+            background: #f8fff9;
+            border: 1px solid var(--xl-grid);
+            padding: 14px 16px;
+            border-radius: 0;
+            margin-top: 12px;
+            text-align: left;
+        }
+        .sheet-tabs {
+            display: flex;
+            align-items: flex-end;
+            gap: 2px;
+            background: #e6e6e6;
+            padding: 6px 8px 0 40px;
+            border-top: 1px solid #bbb;
+            font-size: 0.78rem;
+        }
+        .sheet-tabs span {
+            background: #d0d0d0;
+            padding: 6px 14px 5px;
+            border: 1px solid #bbb;
+            border-bottom: none;
+            color: #444;
+        }
+        .sheet-tabs span.is-on {
+            background: #fff;
+            color: var(--xl-green);
+            font-weight: 700;
+            border-top: 2px solid var(--xl-green);
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            color: #eee;
+            font-size: 0.75rem;
+            max-width: 920px;
+            margin: 0 auto;
+        }
         .modal {
             display: none;
             position: fixed;
@@ -166,17 +335,16 @@
             height: 100%;
             background-color: rgba(0,0,0,0.6);
         }
-
         .modal-content {
             background-color: white;
             margin: 10% auto;
             padding: 30px;
-            border-radius: 12px;
+            border-radius: 2px;
             max-width: 600px;
             text-align: left;
             position: relative;
+            border: 1px solid #333;
         }
-
         .close-button {
             position: absolute;
             right: 20px;
@@ -186,35 +354,75 @@
             cursor: pointer;
             color: #aaa;
         }
-
         .close-button:hover { color: #333; }
-
         @media (max-width: 600px) {
+            body { padding: 0; }
             .features { grid-template-columns: 1fr; }
-            #main { margin: 15px; padding: 20px; }
+            .features li { border-right: none; border-bottom: 1px solid var(--xl-grid); }
+            #main { padding: 16px; }
             .modal-content { margin: 20% 15px; }
+            .titlebar { padding-left: 36px; }
         }
     </style>
 </head>
 <body class="lang-ja">
+<div class="workbook">
+    <div class="titlebar">
+        <span class="titlebar-name">JAN_Barcodes.xlsm — Excel</span>
+        <nav class="lang-switch" aria-label="Language">
+            <button type="button" data-lang="ja" class="is-active">日本語</button>
+            <span class="lang-sep" aria-hidden="true">|</span>
+            <button type="button" data-lang="en">English</button>
+        </nav>
+    </div>
+    <div class="ribbon">
+        <div class="ribbon-tabs">
+            <span class="i18n-ja">ファイル</span><span class="i18n-en">File</span>
+            <span class="i18n-ja">ホーム</span><span class="i18n-en">Home</span>
+            <span class="is-on i18n-ja">開発</span><span class="is-on i18n-en">Developer</span>
+        </div>
+        <div class="ribbon-body">
+            <div class="ribbon-group">
+                <b class="i18n-ja">マクロ</b><b class="i18n-en">Macros</b>
+                <span class="i18n-ja">Excel VBA · .xlsm / .xls</span>
+                <span class="i18n-en">Excel VBA · .xlsm / .xls</span>
+            </div>
+            <div class="ribbon-group">
+                <b class="i18n-ja">実行場所</b><b class="i18n-en">Runs in</b>
+                <span class="i18n-ja">ブック内（オフライン）</span>
+                <span class="i18n-en">Inside the workbook (offline)</span>
+            </div>
+        </div>
+    </div>
+    <div class="formula-bar">
+        <span class="fx">fx</span>
+        <span class="cell-ref">A1</span>
+        <span class="formula i18n-ja">=バーコード作成()</span>
+        <span class="formula i18n-en">=GenerateJAN()</span>
+    </div>
     <header id="header">
-    <nav class="lang-switch" aria-label="Language">
-        <button type="button" data-lang="ja" class="is-active">日本語</button>
-        <span class="lang-sep" aria-hidden="true">|</span>
-        <button type="button" data-lang="en">English</button>
-    </nav>
     <h1>JAN Barcode Generator</h1>
     <p class="i18n-ja">JANコード一括作成ツール v2.0</p>
     <p class="i18n-en">Batch JAN / EAN barcode tool for Excel v2.0</p>
+    <span class="file-badge">Excel VBA · .xlsm / .xls</span>
 </header>
 
+<div class="sheet">
+<div class="row-gutter">2<br>3<br>4</div>
 <main id="main">
 
     <section id="intro">
         <h2 class="i18n-ja">スキャナが迷わない、高精度な仕上がり。</h2>
         <h2 class="i18n-en">Crisp barcodes that scan first time.</h2>
         <p class="i18n-ja">読み取りやすさを追求した高精度なバーコード。複雑な設定不要で、現場の作業を止めない品質です。</p>
-        <p class="i18n-en">Clear barcodes designed for instant scanning. Professional quality without complex settings.</p>
+            <p class="i18n-en">Clear barcodes designed for instant scanning. Professional quality without complex settings.</p>
+        <div class="vbe" aria-hidden="true">
+            <div class="vbe-title">VBE — Module1</div>
+            <span class="kw">Sub</span> GenerateJAN()<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="cm">' Excel VBA  ·  offline  ·  .xlsm</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Range(<span class="str">"A2"</span>).Value = CheckDigit(jan)<br>
+            <span class="kw">End Sub</span>
+        </div>
     </section>
 
     <section id="updates">
@@ -301,6 +509,13 @@
         </div>
     </section>
 </main>
+</div>
+    <div class="sheet-tabs">
+        <span class="is-on">JAN</span>
+        <span>VBA</span>
+        <span class="i18n-ja">マニュアル</span><span class="i18n-en">Manual</span>
+    </div>
+</div>
 
 <div id="disclaimerModal" class="modal">
     <div class="modal-content">

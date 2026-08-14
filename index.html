@@ -129,6 +129,32 @@
 
         footer { text-align: center; padding: 40px; color: #555; font-size: 0.8rem; }
 
+        .lang-switch {
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            font-size: 0.9rem;
+        }
+        header#header { position: relative; }
+        .lang-switch button {
+            background: none;
+            border: none;
+            color: rgba(255,255,255,0.85);
+            cursor: pointer;
+            font: inherit;
+            padding: 0 4px;
+        }
+        .lang-switch button:hover { color: #fff; }
+        .lang-switch button.is-active {
+            color: #fff;
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+        .lang-sep { opacity: 0.6; user-select: none; }
+        body.lang-ja .i18n-en { display: none !important; }
+        body.lang-en .i18n-ja { display: none !important; }
+
         /* モーダルのスタイル */
         .modal {
             display: none;
@@ -170,42 +196,47 @@
         }
     </style>
 </head>
-<body>
+<body class="lang-ja">
     <header id="header">
+    <nav class="lang-switch" aria-label="Language">
+        <button type="button" data-lang="ja" class="is-active">日本語</button>
+        <span class="lang-sep" aria-hidden="true">|</span>
+        <button type="button" data-lang="en">English</button>
+    </nav>
     <h1>JAN Barcode Generator</h1>
-    <p>JANコード一括作成ツール v2.0</p>
+    <p class="i18n-ja">JANコード一括作成ツール v2.0</p>
+    <p class="i18n-en">Batch JAN / EAN barcode tool for Excel v2.0</p>
 </header>
 
 <main id="main">
 
     <section id="intro">
-        <span class="en-sub">High-Precision / Professional Quality</span>
-        <h2>スキャナが迷わない、高精度な仕上がり。</h2>
-        <p>
-            Crisp, clear barcodes designed for instant scanning. Professional quality without complex settings.<br>
-            読み取りやすさを追求した高精度なバーコード。複雑な設定不要で、現場の作業を止めないプロの品質を提供します。
-        </p>
+        <h2 class="i18n-ja">スキャナが迷わない、高精度な仕上がり。</h2>
+        <h2 class="i18n-en">Crisp barcodes that scan first time.</h2>
+        <p class="i18n-ja">読み取りやすさを追求した高精度なバーコード。複雑な設定不要で、現場の作業を止めない品質です。</p>
+        <p class="i18n-en">Clear barcodes designed for instant scanning. Professional quality without complex settings.</p>
     </section>
 
     <section id="updates">
-        <span class="en-sub">Major Update: v1.0 to v2.0</span>
-        <h2>劇的な進化を遂げたVersion 2.0</h2>
-        <p>
-            Batch generation and auto-calculate functions are now available.<br>
-            旧版(v1.0)の「1件ずつ作成」から、v2.0では「1,000件規模の一括作成」に対応。さらに、チェックデジットの自動付加機能やエラー検知機能を搭載しました。
-        </p>
+        <h2 class="i18n-ja">Version 2.0 で一括作成に対応</h2>
+        <h2 class="i18n-en">Version 2.0: batch generation</h2>
+        <p class="i18n-ja">旧版(v1.0)の「1件ずつ作成」から、v2.0では1,000件規模の一括作成に対応。チェックデジットの自動付加とエラー検知を搭載しています。</p>
+        <p class="i18n-en">v1.0 created codes one by one. v2.0 can batch about 1,000 items, add check digits, and flag errors.</p>
         <div class="update-box">
-            <h3 style="color: #217346; margin-top: 0; font-size: 1.1rem;">Legacy & Modern Excel Support / 新旧エクセル対応</h3>
-            <p style="text-align: left; font-size: 0.95rem; margin-bottom: 0;">
-                Includes both <b>.xlsm</b> and <b>.xls</b> formats. Works perfectly on any Excel environment.<br>
-                最新の.xlsm形式だけでなく、旧形式の.xlsファイルも同梱。マクロが使える環境であれば、新旧問わずあらゆるエクセルで動作します。
+            <h3 class="i18n-ja" style="color: #217346; margin-top: 0; font-size: 1.1rem;">新旧エクセル対応</h3>
+            <h3 class="i18n-en" style="color: #217346; margin-top: 0; font-size: 1.1rem;">Legacy and modern Excel</h3>
+            <p class="i18n-ja" style="text-align: left; font-size: 0.95rem; margin-bottom: 0;">
+                最新の .xlsm だけでなく、旧形式の .xls も同梱。マクロが使える環境であれば、新旧問わず動作します。
+            </p>
+            <p class="i18n-en" style="text-align: left; font-size: 0.95rem; margin-bottom: 0;">
+                Includes both <b>.xlsm</b> and <b>.xls</b>. It runs on Excel environments where macros are allowed.
             </p>
         </div>
     </section>
 
     <section id="demo">
-        <span class="en-sub">Watch Demo Video</span>
-        <h2>実際の動作を確認</h2>
+        <h2 class="i18n-ja">実際の動作を確認</h2>
+        <h2 class="i18n-en">Watch the demo</h2>
         <div class="video-container">
             <video width="100%" controls playsinline>
                 <source src="assets/barcode.mp4" type="video/mp4">
@@ -214,49 +245,59 @@
     </section>
 
     <section id="features">
-        <span class="en-sub">Key Features</span>
-        <h2>選ばれる理由</h2>
+        <h2 class="i18n-ja">選ばれる理由</h2>
+        <h2 class="i18n-en">Why this tool</h2>
         <ul class="features">
             <li>
-                <h3>100% Offline</h3>
-                <p>Security first. No data leaks.<br>完全オフラインで安全。</p>
+                <h3 class="i18n-ja">完全オフライン</h3>
+                <h3 class="i18n-en">100% Offline</h3>
+                <p class="i18n-ja">通信しません。データは外に出ません。</p>
+                <p class="i18n-en">No network. Your data stays on the PC.</p>
             </li>
             <li>
-                <h3>Auto-Digit</h3>
-                <p>Automatic check digit calculation.<br>チェックデジット自動付加。</p>
+                <h3 class="i18n-ja">チェックデジット自動</h3>
+                <h3 class="i18n-en">Auto check digit</h3>
+                <p class="i18n-ja">チェックデジットを自動で付けます。</p>
+                <p class="i18n-en">Automatic check digit calculation.</p>
             </li>
         </ul>
     </section>
 
     <section id="security">
-        <span class="en-sub">Security & Privacy First</span>
-        <h2>オフライン環境での重要性</h2>
-        <p>
-            Online tools pose a risk of data leakage. This tool is essential for secure business environments.<br>
-            外部サイトでの作成はデータ流出のリスクが伴います。本ツールは完全オフラインで動作するため、セキュリティを重視する環境に最適です。
-        </p>
+        <h2 class="i18n-ja">オフラインで作る理由</h2>
+        <h2 class="i18n-en">Why offline matters</h2>
+        <p class="i18n-ja">外部サイトでの作成は、データ流出のリスクが伴います。本ツールは完全オフラインで動作します。</p>
+        <p class="i18n-en">Online generators can leak data. This tool runs fully offline for secure workplaces.</p>
     </section>
 
     <section id="cta">
-        <span class="en-sub">Available now on note</span>
-        <h2>今すぐ業務を自動化しましょう</h2>
-        <p>English & Japanese manuals included.<br>英語・日本語マニュアル同梱</p>
+        <h2 class="i18n-ja">今すぐ業務を自動化しましょう</h2>
+        <h2 class="i18n-en">Start automating the barcode work</h2>
+        <p class="i18n-ja">英語・日本語のマニュアルを同梱しています。</p>
+        <p class="i18n-en">English and Japanese manuals are included.</p>
         <div style="margin-top: 30px;">
             <a href="https://note.com/ktech_dev/n/nf2fc9e3e7bc0" class="button primary">
-                Buy on note / 購入ページへ
+                <span class="i18n-ja">購入ページへ</span>
+                <span class="i18n-en">Buy on note</span>
             </a>
         </div>
     </section>
 
     <section id="links" style="margin-top: 50px; border-top: 1px solid #eee; padding-top: 30px;">
-        <span class="en-sub">Connect & Support</span>
-        <h2>Links</h2>
+        <h2 class="i18n-ja">リンク</h2>
+        <h2 class="i18n-en">Links</h2>
         <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
             <a href="https://x.com/K_Tech_Dev" target="_blank" style="text-decoration: none; color: #555;">X (Twitter)</a>
             <a href="https://github.com/crossbeat461-a11y/crossbeat461-a11y" target="_blank" style="text-decoration: none; color: #555;">GitHub</a>
             <a href="https://k-tech-lab.vercel.app/" target="_blank" style="text-decoration: none; color: #555;">Portfolio</a>
-            <a href="javascript:void(0)" id="openModal" style="text-decoration: none; color: #555;">Disclaimer / 免責事項</a>
-            <a href="https://note.com/ktech_dev/n/nf2fc9e3e7bc0" target="_blank" style="text-decoration: none; color: #217346; font-weight: bold;">Official Store (note)</a>
+            <a href="javascript:void(0)" id="openModal" style="text-decoration: none; color: #555;">
+                <span class="i18n-ja">免責事項</span>
+                <span class="i18n-en">Disclaimer</span>
+            </a>
+            <a href="https://note.com/ktech_dev/n/nf2fc9e3e7bc0" target="_blank" style="text-decoration: none; color: #217346; font-weight: bold;">
+                <span class="i18n-ja">公式ストア（note）</span>
+                <span class="i18n-en">Official store (note)</span>
+            </a>
         </div>
     </section>
 </main>
@@ -264,14 +305,13 @@
 <div id="disclaimerModal" class="modal">
     <div class="modal-content">
         <span class="close-button">&times;</span>
-        <h3 style="color: #217346;">Disclaimer / 免責事項</h3>
+        <h3 class="i18n-ja" style="color: #217346;">免責事項</h3>
+        <h3 class="i18n-en" style="color: #217346;">Disclaimer</h3>
         <div style="font-size: 0.9rem; line-height: 1.8;">
-            <p style="text-align: left;">
-                <strong>English:</strong><br>
+            <p class="i18n-en" style="text-align: left;">
                 This tool is provided "as is" without any warranties. The creator shall not be liable for any direct or indirect damages arising from the use of this tool. Use it at your own risk.
             </p>
-            <p style="text-align: left; border-top: 1px solid #eee; pt: 15px; margin-top: 15px;">
-                <strong>日本語:</strong><br>
+            <p class="i18n-ja" style="text-align: left;">
                 本ツールは現状有姿で提供されます。本ツールの利用によって生じた直接的・間接的な損害について、製作者は一切の責任を負いません。ご利用は自己責任でお願いいたします。
             </p>
         </div>
@@ -283,16 +323,61 @@
 </footer>
 
 <script>
-    // モーダルの制御
-    const modal = document.getElementById("disclaimerModal");
-    const btn = document.getElementById("openModal");
-    const span = document.getElementsByClassName("close-button")[0];
+    var modal = document.getElementById("disclaimerModal");
+    var btn = document.getElementById("openModal");
+    var span = document.getElementsByClassName("close-button")[0];
 
     btn.onclick = function() { modal.style.display = "block"; }
     span.onclick = function() { modal.style.display = "none"; }
     window.onclick = function(event) {
         if (event.target == modal) { modal.style.display = "none"; }
     }
+
+    var titles = {
+        ja: "JANコード一括作成ツール v2.0 | JAN Barcode Generator",
+        en: "JAN Barcode Generator v2.0 | Excel JAN / EAN barcodes"
+    };
+    var descriptions = {
+        ja: "読み取り精度を追求したJANコード一括作成ツール。Excel VBA完結、完全オフライン。",
+        en: "High-precision JAN/EAN barcodes for Excel. Fully offline. No complex setup."
+    };
+
+    function setLang(lang) {
+        var next = lang === "en" ? "en" : "ja";
+        document.documentElement.lang = next === "en" ? "en" : "ja";
+        document.body.classList.remove("lang-ja", "lang-en");
+        document.body.classList.add(next === "en" ? "lang-en" : "lang-ja");
+        document.querySelectorAll(".lang-switch button").forEach(function (el) {
+            el.classList.toggle("is-active", el.getAttribute("data-lang") === next);
+        });
+        document.title = titles[next];
+        var meta = document.querySelector('meta[name="description"]');
+        if (meta) meta.setAttribute("content", descriptions[next]);
+        try { localStorage.setItem("jancode-lang", next); } catch (e) {}
+        if (history.replaceState) {
+            var url = new URL(window.location.href);
+            if (next === "ja") url.searchParams.delete("lang");
+            else url.searchParams.set("lang", "en");
+            history.replaceState({}, "", url);
+        }
+    }
+
+    document.querySelectorAll(".lang-switch button").forEach(function (el) {
+        el.addEventListener("click", function () {
+            setLang(el.getAttribute("data-lang"));
+        });
+    });
+
+    var start = "ja";
+    try {
+        var q = new URLSearchParams(window.location.search).get("lang");
+        if (q === "en" || q === "ja") start = q;
+        else {
+            var saved = localStorage.getItem("jancode-lang");
+            if (saved === "en" || saved === "ja") start = saved;
+        }
+    } catch (e) {}
+    setLang(start);
 </script>
 
 </body>

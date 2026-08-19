@@ -377,11 +377,54 @@
         }
         footer {
             text-align: center;
-            padding: 10px;
-            color: #eee;
-            font-size: 0.75rem;
-            max-width: 920px;
-            margin: 0 auto;
+            padding: 48px 24px;
+            background: var(--xl-green-dark);
+            color: #b8dcc8;
+            font-size: 0.85rem;
+            margin-top: 0;
+            max-width: none;
+        }
+
+        footer a,
+        footer .open-disclaimer {
+            color: #e8f5ec;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover,
+        footer .open-disclaimer:hover {
+            color: #fff;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px 22px;
+            margin-bottom: 14px;
+        }
+
+        .footer-disclaimer {
+            max-width: 42rem;
+            margin: 0 auto 12px;
+            font-size: 0.78rem;
+            line-height: 1.6;
+            color: #8fc4a8;
+        }
+
+        .footer-copy {
+            margin: 0;
+            font-size: 0.82rem;
+            color: #8fc4a8;
+        }
+
+        footer .open-disclaimer {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font: inherit;
+            padding: 0;
         }
         .modal {
             display: none;
@@ -597,20 +640,31 @@
 </div>
 
 <footer>
-    <p style="margin: 0 0 8px;">
+    <div class="footer-links">
+        <a href="https://note.com/ktech_dev/n/nf2fc9e3e7bc0" target="_blank" rel="noopener noreferrer">
+            <span class="i18n-ja">note</span>
+            <span class="i18n-en">note</span>
+        </a>
+        <a href="https://github.com/crossbeat461-a11y/k-tech-jancode-docs" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <button type="button" class="open-disclaimer">
+            <span class="i18n-ja">免責事項</span>
+            <span class="i18n-en">Disclaimer</span>
+        </button>
+        <a href="https://buymeacoffee.com/k_tech_studio" target="_blank" rel="noopener noreferrer">☕ Coffee</a>
         <a href="https://k-tech-lab.vercel.app/" target="_blank" rel="noopener noreferrer">K-Tech Studio</a>
-        ·
-        <a href="https://buymeacoffee.com/k_tech_studio" target="_blank" rel="noopener noreferrer">☕ Buy Me a Coffee</a>
-    </p>
-    &copy; k-Tech Studio. All rights reserved.
+    </div>
+    <p class="footer-disclaimer i18n-ja">バーコード生成は PC 上の Excel（VBA）内で完結します。この LP は JAN リストを保存しません。ブック本体は note で配布しています。</p>
+    <p class="footer-disclaimer i18n-en">Barcodes are generated inside Excel on your PC. This landing page does not store your JAN lists. The workbook is distributed on note.</p>
+    <p class="footer-copy">JAN Barcode Generator v2.0 · © 2026 K-Tech Studio</p>
 </footer>
 
 <script>
     var modal = document.getElementById("disclaimerModal");
-    var btn = document.getElementById("openModal");
     var span = document.getElementsByClassName("close-button")[0];
 
-    btn.onclick = function() { modal.style.display = "block"; }
+    document.querySelectorAll(".open-disclaimer, #openModal").forEach(function (el) {
+        el.addEventListener("click", function () { modal.style.display = "block"; });
+    });
     span.onclick = function() { modal.style.display = "none"; }
     window.onclick = function(event) {
         if (event.target == modal) { modal.style.display = "none"; }

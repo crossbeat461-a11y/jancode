@@ -80,7 +80,8 @@ images/ogp-main.jpg
 ```
 
 技術メモ: [k-tech-jancode-docs](https://github.com/crossbeat461-a11y/k-tech-jancode-docs)  
-Studio: [k-tech-lab.vercel.app](https://k-tech-lab.vercel.app/)
+Studio: [k-tech-lab.vercel.app](https://k-tech-lab.vercel.app/)  
+Support: [Buy Me a Coffee](https://buymeacoffee.com/k_tech_studio)
 
 免責: 現状有姿です。利用は自己責任でお願いします。詳細は [LP](https://jancode-psi.vercel.app/) にもあります。
 

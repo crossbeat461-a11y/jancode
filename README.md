@@ -1,6 +1,6 @@
-# JAN Barcode Generator
+# EAN-13 & EAN-8 Barcode Generator
 
-Excel だけで JAN / EAN バーコードを一括作成するツールです。生成は PC 上で完結し、外部にデータを送りません。
+Excel だけで JAN（EAN-13 / EAN-8）バーコードを一括作成するツールです。生成は PC 上で完結し、外部にデータを送りません。
 
 **買う（note・¥1,000）:** [note.com/ktech_dev/n/nf2fc9e3e7bc0](https://note.com/ktech_dev/n/nf2fc9e3e7bc0)  
 **見る（LP）:** [jancode-psi.vercel.app](https://jancode-psi.vercel.app/)
@@ -12,7 +12,9 @@ Excel だけで JAN / EAN バーコードを一括作成するツールです。
 <a name="english"></a>
 ## English
 
-Create scanner-ready JAN / EAN barcodes in Excel. No web upload.
+Create scanner-ready EAN-13 and EAN-8 barcodes in Excel. No web upload.
+
+**Terminology:** EAN-13 carries a GTIN-13, and EAN-8 carries a GTIN-8. In Japan, both are commonly called JAN codes. UPC-A, the 12-digit format commonly used in North America, is not included.
 
 **[Buy on note — ¥1,000](https://note.com/ktech_dev/n/nf2fc9e3e7bc0)** · **[Landing page](https://jancode-psi.vercel.app/?lang=en)**
 

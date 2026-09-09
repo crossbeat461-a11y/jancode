@@ -28,7 +28,7 @@
     <meta property="og:title" content="JANコード一括作成ツール v2.0 | Excel VBA・完全オフライン">
     <meta property="og:description" content="Excel VBAでJAN/EANバーコードを一括作成。チェックデジット自動、完全オフライン。">
     <meta property="og:image" content="https://jancode-psi.vercel.app/images/ogp-main.jpg">
-    <meta property="og:image:alt" content="JAN Barcode Generator for Excel">
+    <meta property="og:image:alt" content="EAN-13 and EAN-8 Barcode Generator for Excel">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
@@ -66,7 +66,7 @@
           "@type": "SoftwareApplication",
           "@id": "https://jancode-psi.vercel.app/#app",
           "name": "JANコード一括作成ツール",
-          "alternateName": "JAN Barcode Generator",
+          "alternateName": "EAN-13 & EAN-8 Barcode Generator",
           "url": "https://jancode-psi.vercel.app/",
           "image": "https://jancode-psi.vercel.app/images/ogp-main.jpg",
           "description": "Excel VBAでJAN/EANバーコードを一括作成。チェックデジット自動、完全オフライン。.xlsm / .xls 対応。",
@@ -386,6 +386,15 @@
             margin-top: 12px;
             text-align: left;
         }
+        .term-note {
+            background: #f3f8f5;
+            border-left: 4px solid var(--xl-green);
+            padding: 12px 14px;
+            margin: 18px 0 0;
+            text-align: left;
+            font-size: 0.9rem;
+            line-height: 1.65;
+        }
         .sheet-tabs {
             display: flex;
             align-items: flex-end;
@@ -603,9 +612,9 @@
     </div>
     <header id="header">
     <h1 class="i18n-ja">JANコード一括作成ツール</h1>
-    <h1 class="i18n-en">JAN Barcode Generator</h1>
+    <h1 class="i18n-en">EAN-13 &amp; EAN-8 Barcode Generator</h1>
     <p class="i18n-ja">Excel VBA で JAN / EAN バーコードを一括作成 v2.0</p>
-    <p class="i18n-en">Batch JAN / EAN barcode tool for Excel v2.0</p>
+    <p class="i18n-en">Batch EAN-13 and EAN-8 barcode tool for Excel v2.0</p>
     <span class="file-badge">Excel VBA · .xlsm / .xls</span>
 </header>
 
@@ -618,6 +627,7 @@
         <h2 class="i18n-en">Crisp barcodes that scan first time.</h2>
         <p class="i18n-ja">読み取りやすさを追求した高精度なバーコード。複雑な設定不要で、現場の作業を止めない品質です。</p>
             <p class="i18n-en">Clear barcodes designed for instant scanning. Professional quality without complex settings.</p>
+        <p class="term-note i18n-en"><strong>Terminology:</strong> EAN-13 carries a GTIN-13, and EAN-8 carries a GTIN-8. In Japan, both are commonly called JAN codes. This tool does not generate UPC-A, the 12-digit format commonly used in North America.</p>
         <div class="vbe" aria-hidden="true">
             <div class="vbe-title">VBE — Module1</div>
             <span class="kw">Sub</span> GenerateJAN()<br>
@@ -650,12 +660,12 @@
         <div class="video-container">
             <video width="100%" controls playsinline preload="metadata"
                 poster="images/ogp-main.jpg"
-                title="JAN barcode batch generation demo">
+                title="EAN-13 and EAN-8 barcode batch generation demo">
                 <source src="assets/barcode.mp4" type="video/mp4">
             </video>
         </div>
         <p class="i18n-ja">Excel VBA で JAN バーコードを一括作成するデモ動画です。</p>
-        <p class="i18n-en">Demo: batch JAN barcode generation in Excel VBA.</p>
+        <p class="i18n-en">Demo: batch EAN-13 and EAN-8 barcode generation in Excel VBA.</p>
     </section>
 
     <section id="features">
@@ -759,7 +769,7 @@
         <a href="https://buymeacoffee.com/k_tech_studio" target="_blank" rel="noopener noreferrer">☕ Buy Me a Coffee</a>
         <a href="https://k-tech-lab.vercel.app/" target="_blank" rel="noopener noreferrer">K-Tech Studio</a>
     </div>
-    <p class="footer-copy">JAN Barcode Generator v2.0 · &copy; 2026 K-Tech Studio. Stay curious.</p>
+    <p class="footer-copy">EAN-13 &amp; EAN-8 Barcode Generator v2.0 · &copy; 2026 K-Tech Studio. Stay curious.</p>
     <div class="footer-meta">
         <button type="button" onclick="togglePolicy()" class="btn-inline-text">About this site</button>
     </div>
@@ -806,15 +816,15 @@
     var SITE = "https://jancode-psi.vercel.app/";
     var titles = {
         ja: "JANコード一括作成ツール v2.0 | Excel VBA・完全オフライン",
-        en: "JAN Barcode Generator v2.0 | Excel JAN / EAN barcodes, offline"
+        en: "EAN-13 & EAN-8 Barcode Generator v2.0 | Excel, offline"
     };
     var descriptions = {
         ja: "Excel VBAでJAN/EANバーコードを一括作成。チェックデジット自動、完全オフライン。.xlsm / .xls 対応。",
-        en: "Batch JAN/EAN barcodes in Excel VBA. Auto check digit, fully offline. Includes .xlsm and .xls."
+        en: "Batch EAN-13 and EAN-8 barcodes in Excel VBA. Auto check digit, fully offline. UPC-A is not included."
     };
     var names = {
         ja: "JANコード一括作成ツール",
-        en: "JAN Barcode Generator"
+        en: "EAN-13 & EAN-8 Barcode Generator"
     };
 
     function setMeta(selector, attr, value) {

@@ -1,6 +1,6 @@
-# EAN-13 & EAN-8 Barcode Generator
+# EAN-13, EAN-8 & UPC-A Barcode Generator
 
-Excel だけで JAN（EAN-13 / EAN-8）バーコードを一括作成するツールです。生成は PC 上で完結し、外部にデータを送りません。
+Excel だけで JAN（EAN-13 / EAN-8）と UPC-A バーコードを一括作成するツールです。生成は PC 上で完結し、外部にデータを送りません。
 
 **買う（note・¥1,000）:** [note.com/ktech_dev/n/nf2fc9e3e7bc0](https://note.com/ktech_dev/n/nf2fc9e3e7bc0)  
 **見る（LP）:** [jancode-psi.vercel.app](https://jancode-psi.vercel.app/)
@@ -12,9 +12,9 @@ Excel だけで JAN（EAN-13 / EAN-8）バーコードを一括作成するツ�
 <a name="english"></a>
 ## English
 
-Create scanner-ready EAN-13 and EAN-8 barcodes in Excel. No web upload.
+Create scanner-ready EAN-13, EAN-8, and UPC-A barcodes in Excel. No web upload.
 
-**Terminology:** EAN-13 carries a GTIN-13, and EAN-8 carries a GTIN-8. In Japan, both are commonly called JAN codes. UPC-A, the 12-digit format commonly used in North America, is not included.
+**Terminology:** EAN-13 carries a GTIN-13, EAN-8 carries a GTIN-8, and UPC-A carries a GTIN-12. In Japan, EAN-13 and EAN-8 are commonly called JAN codes.
 
 **[Buy on note — ¥1,000](https://note.com/ktech_dev/n/nf2fc9e3e7bc0)** · **[Landing page](https://jancode-psi.vercel.app/?lang=en)**
 
@@ -24,9 +24,10 @@ This GitHub repo is the landing page only. The workbook is **not** in this repos
 
 * `.xlsm` (current Excel) and `.xls` (legacy Excel)
 * English and Japanese manuals
-* Batch generation (about 1,000 items in v2.0)
-* Automatic check digit
-* Error highlighting for bad length / empty cells
+* Batch generation (about 1,000 items)
+* 13-digit EAN-13, 12-digit UPC-A, 8-digit EAN-8
+* Check digit verification
+* Error highlighting for bad codes
 * Fully offline VBA — no network calls
 
 ### Requirements
@@ -37,14 +38,14 @@ This GitHub repo is the landing page only. The workbook is **not** in this repos
 
 ### Privacy
 
-Barcodes are generated inside Excel on your PC. This site does not collect your JAN lists.
+Barcodes are generated inside Excel on your PC. This site does not collect your barcode lists.
 
 ---
 
 <a name="japanese"></a>
 ## 日本語
 
-スキャナが迷わない JAN / EAN バーコードを、Excel だけで一括作成します。
+スキャナが迷わない JAN / EAN / UPC-A バーコードを、Excel だけで一括作成します。
 
 **[note で購入 — ¥1,000](https://note.com/ktech_dev/n/nf2fc9e3e7bc0)** · **[紹介ページ](https://jancode-psi.vercel.app/)**
 
@@ -54,9 +55,10 @@ Barcodes are generated inside Excel on your PC. This site does not collect your 
 
 * `.xlsm`（現行 Excel）と `.xls`（旧形式）
 * 英語・日本語マニュアル
-* 一括作成（v2.0 で約 1,000 件）
-* チェックデジット自動
-* 桁数ミス・入力漏れを青で検知
+* 一括作成（約 1,000 件）
+* 13桁のJAN、12桁のUPC-A、8桁の短縮JAN
+* チェックデジットの確認
+* 誤りを青で検知
 * 完全オフライン（外部通信なし）
 
 ### 動作環境
@@ -67,7 +69,7 @@ Barcodes are generated inside Excel on your PC. This site does not collect your 
 
 ### プライバシー
 
-生成は PC 上の Excel（VBA）内で完結します。この LP は JAN / 商品リストを保存しません。
+生成は PC 上の Excel（VBA）内で完結します。この LP は商品番号リストを保存しません。
 
 ---
 
